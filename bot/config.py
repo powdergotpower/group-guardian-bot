@@ -11,7 +11,7 @@ load_dotenv()
 API_ID = int(os.getenv("22071176", "0"))
 API_HASH = os.getenv("7ed5401b625a0a4d3c45caf12c87f166", "")
 BOT_TOKEN = os.getenv("7918136133:AAEdGPNoeRAtory8zUGKR8-dBU6GAJNQ5D8", "")
-OWNER_ID = int(os.getenv("OWNER_ID", "0"))
+OWNER_ID = int(os.getenv("8032922682", "0"))
 
 # Bot settings
 WARN_LIMIT = 3  # Number of warns before auto-ban
