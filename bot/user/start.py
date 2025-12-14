@@ -1,10 +1,16 @@
 """
 Start command handler
 """
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import Message, CallbackQuery
 from pyrogram.enums import ChatType
-from bot.utils.buttons import start_buttons, help_buttons, back_button
+
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from utils.buttons import start_buttons, help_buttons, back_button
+from main import app
 
 
 START_TEXT = """
@@ -41,8 +47,8 @@ Made with ❤️
 """
 
 
-@Client.on_message(filters.command("start"))
-async def start_command(client: Client, message: Message):
+@app.on_message(filters.command("start"))
+async def start_command(client, message: Message):
     """Handle /start command"""
     user_name = message.from_user.first_name if message.from_user else "User"
     
@@ -58,8 +64,8 @@ async def start_command(client: Client, message: Message):
         )
 
 
-@Client.on_callback_query(filters.regex("^start$"))
-async def start_callback(client: Client, callback: CallbackQuery):
+@app.on_callback_query(filters.regex("^start$"))
+async def start_callback(client, callback: CallbackQuery):
     """Handle start button callback"""
     user_name = callback.from_user.first_name if callback.from_user else "User"
     
@@ -70,8 +76,8 @@ async def start_callback(client: Client, callback: CallbackQuery):
     await callback.answer()
 
 
-@Client.on_callback_query(filters.regex("^about$"))
-async def about_callback(client: Client, callback: CallbackQuery):
+@app.on_callback_query(filters.regex("^about$"))
+async def about_callback(client, callback: CallbackQuery):
     """Handle about button callback"""
     await callback.message.edit_text(
         ABOUT_TEXT,
