@@ -690,19 +690,26 @@ async def start_wordgame(client, message: Message):
 
 async def main():
     """Start the bot"""
+    print("Initializing database...")
     await db.init()
+    print("Database ready!")
+    
+    print("Starting bot...")
     await app.start()
     me = await app.get_me()
     
     print("=" * 40)
     print("Bot started successfully!")
     print(f"Bot username: @{me.username}")
-    print("All handlers loaded!")
+    print(f"Bot ID: {me.id}")
+    print(f"Handlers registered: {len(app.dispatcher.groups)}")
     print("=" * 40)
+    print("Bot is now listening for messages...")
     
     await idle()
     await app.stop()
 
 
 if __name__ == "__main__":
+    print("Starting Group Manager Bot...")
     asyncio.run(main())
