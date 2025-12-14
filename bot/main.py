@@ -14,8 +14,8 @@ db = Database()
 app = Client(
     "group_manager_bot",
     api_id=22071176,
-    api_hash=7ed5401b625a0a4d3c45caf12c87f166,
-    bot_token=7918136133:AAEdGPNoeRAtory8zUGKR8-dBU6GAJNQ5D8,
+    api_hash="7ed5401b625a0a4d3c45caf12c87f166",
+    bot_token="7918136133:AAEdGPNoeRAtory8zUGKR8-dBU6GAJNQ5D8",
     plugins=dict(root="bot")
 )
 
