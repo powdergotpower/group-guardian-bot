@@ -4,6 +4,7 @@ Main entry point
 """
 
 import asyncio
+import os
 from pyrogram import Client, idle
 
 from config import API_ID, API_HASH, BOT_TOKEN
@@ -12,13 +13,16 @@ from database import Database
 # Initialize database
 db = Database()
 
+# Get the directory where main.py is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Initialize bot client
 app = Client(
     name="group_manager_bot",
     api_id=API_ID,
     api_hash=API_HASH,
     bot_token=BOT_TOKEN,
-    plugins=dict(root=".", include=["admin", "user", "music", "games"])
+    plugins=dict(root=BASE_DIR, include=["admin", "user", "music", "games"])
 )
 
 
