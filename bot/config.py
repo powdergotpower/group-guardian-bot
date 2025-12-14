@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Required environment variables
-API_ID = int(os.getenv("API_ID", "0"))
-API_HASH = os.getenv("API_HASH", "")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+API_ID = int(os.getenv("22071176", "0"))
+API_HASH = os.getenv("7ed5401b625a0a4d3c45caf12c87f166", "")
+BOT_TOKEN = os.getenv("7918136133:AAEdGPNoeRAtory8zUGKR8-dBU6GAJNQ5D8", "")
 OWNER_ID = int(os.getenv("OWNER_ID", "0"))
 
 # Bot settings
